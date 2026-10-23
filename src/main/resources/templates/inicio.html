@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+    <head th:replace="~{layout :: head('inicio.css', 'Conecta con proveedores')}"></head>
+
+    <body class="bg-white text-dark">
+
+        <!-- HEADER -->
+        <div th:replace="~{layout :: header}"></div>
+
+        <!-- MAIN -->
+        <main>
+            <div id="carouselHero" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button typ e="button" data-bs-target="#carouselHero" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselHero" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active position-relative py-5">
+                        <img th:src="@{/img/banner1.webp}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" alt="Proveedores">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-success-light opacity-50 z-0"></div>
+                        <div class="container py-4 text-center position-relative z-1">
+                            <span class="badge bg-white text-success-brand px-3 py-2 rounded-pill fw-bold text-uppercase tracking-wider mb-3">Gran Lanzamiento</span>
+                            <h2 class="display-5 fw-bold text-primary mb-3">Encuentra Proveedores en un Clic</h2>
+                            <p class="text-primary max-w-xl mx-auto mb-4">La red de distribución mayorista más grande del Perú ahora al alcance de tu mano.</p>
+                            <a href="login?registrar=true" class="btn btn-primary px-4 py-2 rounded-3 fw-bold border-0">Saber Más</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative py-5">
+                        <img th:src="@{/img/banner2.webp}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" alt="Ahorro">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-blue-light opacity-50 z-0"></div>
+                        <div class="container py-4 text-center position-relative z-1">
+                            <span class="badge bg-white text-primary px-3 py-2 rounded-pill fw-bold text-uppercase tracking-wider mb-3">Precios Bajos</span>
+                            <h2 class="display-5 fw-bold text-primary mb-3">Ahorra hasta un 40% en Lotes</h2>
+                            <p class="text-primary max-w-xl mx-auto mb-4">Compara costos directo de fábrica y optimiza los márgenes de ganancia de tu negocio.</p>
+                            <a href="#" class="btn btn-primary px-4 py-2 rounded-3 fw-bold border-0">Ver Precios</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item position-relative py-5">
+                        <img th:src="@{/img/banner3.webp}" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover z-0" alt="Seguridad">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-yellow-light opacity-50 z-0"></div>
+                        <div class="container py-4 text-center position-relative z-1">
+                            <span class="badge bg-white text-dark px-3 py-2 rounded-pill fw-bold text-uppercase tracking-wider mb-3">100% Seguro</span>
+                            <h2 class="display-5 fw-bold text-primary mb-3">Contactos Verificados en Perú</h2>
+                            <p class="text-primary max-w-xl mx-auto mb-4">Evita fraudes comerciales conversando únicamente con empresas con historial aprobado.</p>
+                            <a href="#" class="btn btn-primary px-4 py-2 rounded-3 fw-bold border-0">Ver Directorio</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHero" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHero" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+
+
+            <!-- Banner -->
+            <section class="py-5 my-md-4">
+                <div class="container">
+                    <div class="row align-items-center gy-5">
+                        <div class="col-lg-6">
+                            <span class="badge text-wrap text-start text-uppercase tracking-wider px-3 py-2 mb-3 bg-light text-danger border border-danger-subtle rounded-pill fw-bold lh-base">
+                                <i class="bi bi-pin-angle-fill me-1 flex-shrink-0"></i> Para microemprendedores en el Perú
+                            </span>
+                            <h1 class="display-4 fw-bold text-dark mb-4 lh-sm">
+                                Conecta con proveedores a los mejores precios en todo el Perú
+                            </h1>
+                            <p class="text-muted fs-5 mb-4 lh-base max-w-xl">
+                                ImportaFácil conecta a microemprendedores con proveedores nacionales confiables. Busca, compara precios al instante y ahorra significativamente en tu próximo lote de productos.
+                            </p>
+                            <a href="/login?registrar=true" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-sm rounded-3">
+                                Registrarme Gratis
+                            </a>
+                        </div>
+                        <div class="col-lg-6 position-relative text-center">
+                            <div class="position-absolute badge-discount p-4 bg-success text-white rounded-4 shadow-lg text-start z-3">
+                                <div class="display-5 fw-extrabold">-40%</div>
+                                <div class="small">En costos de<br>compra.</div>
+                            </div>
+                            <div class="image-wrapper rounded-4 shadow-sm mx-auto hero-image-container">
+                                <div class="w-100 h-100 rounded-4 overflow-hidden position-relative z-2">
+                                    <img th:src="@{/img/main.webp}" class="img-fluid w-100 h-100 object-fit-cover" alt="Trabajo en almacén">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Estadísticas -->
+            <section class="py-5 bg-yellow-light border-top border-bottom">
+                <div class="container">
+                    <div class="row text-center gy-4 justify-content-center">
+                        <div class="col-6 col-md-3">
+                            <div class="display-6 fw-extrabold text-dark">+2,500</div>
+                            <div class="text-secondary small text-uppercase tracking-wider fw-medium mt-1">Proveedores Verificados</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="display-6 fw-extrabold text-dark">+15,000</div>
+                            <div class="text-secondary small text-uppercase tracking-wider fw-medium mt-1">Productos Disponibles</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="display-6 fw-extrabold text-dark">+8,000</div>
+                            <div class="text-secondary small text-uppercase tracking-wider fw-medium mt-1">Microemprendedores Activos</div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="display-6 fw-extrabold text-dark">98%</div>
+                            <div class="text-secondary small text-uppercase tracking-wider fw-medium mt-1">Satisfacción</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Características -->
+            <section class="py-5 my-md-5">
+                <div class="container">
+                    <div class="text-center mb-5">
+                        <span class="text-success text-uppercase fw-bold tracking-wider small">Eficiencia para tu negocio</span>
+                        <h2 class="h1 fw-bold text-dark mt-2">Todo lo que Necesitas en un Solo Lugar</h2>
+                    </div>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4 border-0 bg-light rounded-4 shadow-sm card-feature">
+                                <div class="icon-shape bg-white text-success rounded-3 shadow-sm mb-4 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-lightning-charge fs-4"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-dark mb-3">Búsqueda Inteligente</h3>
+                                <p class="text-muted mb-0">
+                                    Encuentra cualquier producto de manera instantánea entre cientos de distribuidores peruanos sin perder tiempo en llamadas.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4 border-0 bg-light rounded-4 shadow-sm card-feature">
+                                <div class="icon-shape bg-white text-success rounded-3 shadow-sm mb-4 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-bar-chart-steps fs-4"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-dark mb-3">Comparación de Precios</h3>
+                                <p class="text-muted mb-0">
+                                    Visualiza precios lado a lado de diferentes proveedores para garantizar la opción que cuide mejor tu presupuesto y márgenes.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card h-100 p-4 border-0 bg-light rounded-4 shadow-sm card-feature">
+                                <div class="icon-shape bg-white text-success rounded-3 shadow-sm mb-4 d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-chat-left-text fs-4"></i>
+                                </div>
+                                <h3 class="h4 fw-bold text-dark mb-3">Consulta Directa</h3>
+                                <p class="text-muted mb-0">
+                                    Contacta directamente con el proveedor seleccionado y solicita cotizaciones detalladas sin intermediarios ni comisiones.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ¿Cómo funciona? -->
+            <section class="py-5 bg-blue-light border-top border-bottom">
+                <div class="container py-md-4">
+                    <div class="text-center mb-5">
+                        <span class="text-uppercase fw-bold tracking-wider small text-secondary">Paso a Paso</span>
+                        <h2 class="h1 fw-bold text-dark mt-2">¿Cómo Funciona?</h2>
+                    </div>
+                    <div class="row g-4 text-start">
+                        <div class="col-md-4">
+                            <div class="display-4 fw-extrabold text-success mb-2">01</div>
+                            <h3 class="h5 fw-bold text-dark mb-2">Regístrate</h3>
+                            <p class="text-secondary small">Crea tu cuenta totalmente gratuita en pocos segundos y accede al directorio nacional.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="display-4 fw-extrabold text-success mb-2">02</div>
+                            <h3 class="h5 fw-bold text-dark mb-2">Busca y Compara</h3>
+                            <p class="text-secondary small">Ingresa el artículo que necesitas y evalúa precios de diferentes proveedores verificados.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="display-4 fw-extrabold text-success mb-2">03</div>
+                            <h3 class="h5 fw-bold text-dark mb-2">Conecta y Ahorra</h3>
+                            <p class="text-secondary small">Comunícate directamente con los distribuidores elegidos y asegura las mejores tarifas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Registrate -->
+            <section class="py-5 bg-yellow-light border-top border-bottom text-center">
+                <div class="container py-4">
+                    <h2 class="display-5 fw-bold text-dark mb-3">Empieza a Ahorrar Hoy</h2>
+                    <p class="text-secondary fs-5 mb-4 mx-auto max-w-xl">
+                        Únete a la plataforma que optimiza el abastecimiento de los emprendedores en el Perú. Compara precios y haz crecer tu negocio.
+                    </p>
+                    <a href="login?registrar=true" class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-sm rounded-3">
+                        Registrarme Gratis
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <div th:replace="~{layout :: footer}"></div>
+
+    </body>
+</html>

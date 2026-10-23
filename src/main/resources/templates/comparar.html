@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+    <head th:replace="~{layout :: head('comparar.css', 'Comparar productos')}"></head>
+
+    <body class="bg-light-layout">
+
+        <!-- HEADER -->
+        <div th:replace="~{layout :: header}"></div>
+
+        <!-- MAIN -->
+        <main class="container py-5">
+            <div id="vista-comparar" th:if="${productoSeleccionado != null}">
+                <div class="mb-4">
+                    <h1 class="display-5 fw-bold text-dark mb-2">Compara y elige el mejor precio</h1>
+                    <p class="text-secondary fs-5">Encuentra el mismo producto en diferentes proveedores y elige la opción que más te convenga.</p>
+                </div>
+
+                <div class="card border-0 bg-white shadow-sm p-3 rounded-4 mb-5">
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="text-secondary small fw-bold text-uppercase tracking-wider">Estás comparando:</span>
+                        <div class="d-flex align-items-center gap-2 bg-success-light px-3 py-2 rounded-3">
+                            <i class="bi bi-box-seam text-primary"></i>
+                            <span id="detalle-tag-nombre" class="text-primary fw-bold small" th:text="${productoSeleccionado.nombre}">Nombre</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 align-items-center mb-5">
+                    <div class="col-md-5 col-lg-4 text-center">
+                        <div class="bg-white border border-light-subtle rounded-4 p-4 shadow-sm">
+                            <div class="product-image-container overflow-hidden" style="height: 280px;">
+                                <img id="detalle-imagen" th:src="${productoSeleccionado.imagen}" class="w-100 h-100 object-fit-contain" th:alt="${productoSeleccionado.nombre}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-lg-8">
+                        <div class="d-flex flex-column gap-3">
+                            <div>
+                                <span id="detalle-categoria" class="badge bg-success-subtle text-white text-uppercase tracking-wider fs-6 mb-2" th:text="${productoSeleccionado.categoria.nombre}">Categoria</span>
+                                <h2 id="detalle-nombre" class="display-6 fw-bold text-dark mb-2" th:text="${productoSeleccionado.nombre}">Nombre</h2>
+                                <p id="detalle-descripcion" class="text-secondary lh-base" th:text="${productoSeleccionado.descripcion}">Descripción</p>
+                            </div>
+                            
+                            <div class="bg-success-subtle border-success-custom rounded-4 p-4 max-w-xl">
+                                <div class="d-flex align-items-center gap-2 mb-1">
+                                    <i class="bi bi-star-fill text-white"></i>
+                                    <span class="text-white fw-bold text-uppercase tracking-wider small">Mejor precio disponible</span>
+                                </div>
+                                <div class="d-flex align-items-baseline gap-2">
+                                    <span class="small text-secondary fw-bold">Desde</span>
+                                    <div id="detalle-precio-min" class="display-5 fw-bold text-dark"
+                                        th:text="'S/. ' + ${#numbers.formatDecimal(precioMinimo, 1, 'COMMA', 2, 'POINT')}">S/. 0.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <h3 class="h4 fw-bold text-dark mb-1">Proveedores disponibles</h3>
+                    <p class="text-secondary small">Compara las tarifas directas de los distribuidores para este lote de productos.</p>
+                </div>
+
+                <div id="contenedor-proveedores" class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+                    <div class="col" th:each="oferta : ${ofertas}">
+                        <div class="card border border-light-subtle rounded-4 p-4 shadow-sm bg-white h-100">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <div>
+                                    <h4 class="h5 fw-bold text-dark mb-1" th:text="${oferta.importador.nombreEmpresa}">Nombre de la Empresa</h4>
+                                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                                        <span class="badge bg-success-subtle text-white px-2 py-1 rounded-3 small fw-bold">
+                                            <i class="bi bi-patch-check-fill me-1"></i> Verificado
+                                        </span>
+                                        <span class="small text-muted fw-medium bg-light px-2 py-1 rounded-3" style="font-size: 0.75rem;">
+                                            <i class="bi bi-boxes text-secondary me-1"></i> Stock: <span class="fw-bold text-dark" th:text="${oferta.stock} + ' und'">0 und</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="text-end">
+                                    <div class="text-muted xsmall mb-1">Precio Unitario</div>
+                                    <div class="h4 fw-extrabold text-success mb-0" th:text="'S/. ' + ${#numbers.formatDecimal(oferta.precio, 1, 'COMMA', 2, 'POINT')}">S/. 0.00</div>
+                                </div>
+                            </div>
+                            <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center gap-3">
+                                <div class="text-muted small text-truncate" style="max-width: 65%;">
+                                    <i class="bi bi-geo-alt-fill text-secondary me-1"></i> 
+                                    <span th:text="${oferta.importador.direccion}">Dirección del importador</span>
+                                </div>
+                                <a th:href="@{/comprar(id=${oferta.id})}" 
+                                   class="btn px-3 py-1.5 bg-success rounded-3 fw-bold border-0 text-nowrap d-flex align-items-center gap-1 shadow-sm">
+                                    Comprar <i class="bi bi-arrow-right small"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="vista-vacia" th:unless="${productoSeleccionado != null}" class="text-center py-5 animate-fade-in">
+                <i class="bi bi-clipboard-x display-1 text-muted mb-3 d-block"></i>
+                <h2 class="fw-bold text-dark mb-2">No has seleccionado ningún producto</h2>
+                <p class="text-secondary mb-4">Regresa al catálogo general de productos para elegir un artículo y comparar sus tarifas.</p>
+                <a href="/productos" class="btn btn-success px-4 py-2.5 fw-bold rounded-3 border-0 shadow-sm text-white">
+                    Ver Catálogo de Productos
+                </a>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <div th:replace="~{layout :: footer}"></div>
+
+        <script th:inline="javascript" th:if="${productoSeleccionado != null}">
+            document.addEventListener('DOMContentLoaded', () => {
+                const hexColorBase = /*[[${productoSeleccionado.categoria.color}]]*/ '#9ad2c2';
+                document.documentElement.style.setProperty('--color-success', hexColorBase);
+            });
+        </script>
+    </body>
+</html>

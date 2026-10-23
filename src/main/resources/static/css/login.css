@@ -1,0 +1,31 @@
+.card-login {
+    width: 100%;
+    max-width: 520px;
+    transition: transform 0.3s ease;
+}
+
+.input-group-custom {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.input-group-custom .form-control,
+.input-group-custom .input-group-text {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+.input-group-custom .form-control:focus {
+    box-shadow: none;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+    main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
