@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://thymeleaf.org">
     <head th:replace="~{layout :: head('login.css', 'Iniciar sesión')}"></head>
 
-    <body class="bg-light-layout min-vh-100 d-flex flex-column">
+    <body class="bg-light min-vh-100 d-flex flex-column">
 
         <!-- HEADER -->
         <div th:replace="~{layout :: header}"></div>
@@ -60,7 +60,7 @@
                     
                     <div class="text-center small">
                         <span class="text-muted">¿Eres nuevo en ImportaFácil? </span>
-                        <a href="#" class="text-success-link fw-bold text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalRegistro">Crear cuenta</a>
+                        <a href="#" class="link link-success fw-bold" data-bs-toggle="modal" data-bs-target="#modalRegistro">Crear cuenta</a>
                     </div>
                 </form>
             </div>

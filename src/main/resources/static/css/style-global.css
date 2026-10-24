@@ -1,3 +1,5 @@
+/* Usando el enfoque de atomicidad tipo Boostrap*/
+/* DOCUMENTO */
 :root {
     --color-success: #9ad2c2;
     --color-success-dark: color-mix(in srgb, var(--color-success), #000 15%);
@@ -20,104 +22,116 @@ body {
     background-color: var(--color-white);
 }
 
-::placeholder {
-    color: var(--color-gray) !important;
-    opacity: 1 !important;
-}
-
-:-ms-input-placeholder {
-    color: var(--color-gray) !important;
-}
-
-::-ms-input-placeholder {
-    color: var(--color-gray) !important;
-}
-
-.bg-light-layout {
-    background-color: var(--color-light) !important;
-}
-
-.fw-extrabold {
-    font-weight: 800;
-}
-
-.tracking-wider {
-    letter-spacing: 0.05em;
-}
-
-.max-w-xl {
-    max-width: 540px;
-}
-
-.text-primary, 
-.navbar-brand {
-    color: var(--color-primary) !important;
-}
-
+/* TEXTO */
 .text-success {
+    color: var(--color-success) !important;
+}
+.text-success-dark {
     color: var(--color-success-dark) !important;
 }
-
-.text-success-brand {
-    color: var(--color-success-dark);
+.text-success-light {
+    color: var(--color-success-light) !important;
 }
-
-.text-success-link {
-    color: var(--color-success-dark);
-    transition: opacity 0.2s ease;
-}
-
-.text-success-link:hover {
-    opacity: 0.8;
-}
-
-.bg-success {
-    background-color: var(--color-success) !important;
+.text-primary {
     color: var(--color-primary) !important;
 }
+.text-gray-dark {
+    color: var(--color-gray-dark) !important;
+}
+.text-gray {
+    color: var(--color-gray) !important;
+}
+.text-gray-light {
+    color: var(--color-gray-light) !important;
+}
+.text-light {
+    color: var(--color-light) !important;
+}
+.text-white {
+    color: var(--color-white) !important;
+}
+.text-blue-light {
+    color: var(--color-blue-light) !important;
+}
+.text-yellow-light {
+    color: var(--color-yellow-light) !important;
+}
+::placeholder {
+    color: var(--color-gray) !important;
+}
 
+/* FONDOS */
+.bg-success {
+    background-color: var(--color-success) !important;
+}
+.bg-success-dark {
+    background-color: var(--color-success-dark) !important;
+}
 .bg-success-light {
     background-color: var(--color-success-light) !important;
 }
-
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+.bg-gray-dark {
+    background-color: var(--color-gray-dark) !important;
+}
+.bg-gray {
+    background-color: var(--color-gray) !important;
+}
+.bg-gray-light {
+    background-color: var(--color-gray-light) !important;
+}
+.bg-light {
+    background-color: var(--color-light) !important;
+}
+.bg-white {
+    background-color: var(--color-white) !important;
+}
 .bg-blue-light {
     background-color: var(--color-blue-light) !important;
 }
-
 .bg-yellow-light {
     background-color: var(--color-yellow-light) !important;
 }
 
-.text-primary-custom {
+/* LINKS */
+.link {
+    text-decoration: none !important;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+.link:hover, .link.active {
+    opacity: 1;
+}
+.link.active {
+    font-weight: 700 !important;
+}
+
+.link-success, .link-success:hover {
     color: var(--color-success-dark) !important;
 }
-
-.bg-primary-custom {
-    background-color: var(--color-primary) !important;
+.link-primary, .link-primary:hover {
+    color: var(--color-primary) !important;
 }
 
-
+/* BOTONES */
 .btn-primary {
     background-color: var(--color-primary) !important;
     border-color: var(--color-primary) !important;
+    &:hover {
+        opacity: 0.85;
+    }
 }
-
-.btn-primary:hover {
-    opacity: 0.9;
-}
-
 .btn-success {
     background-color: var(--color-success) !important;
     border-color: var(--color-success) !important;
     color: var(--color-primary) !important;
+    &:hover {
+        background-color: var(--color-success-dark) !important;
+        border-color: var(--color-success-dark) !important;
+    }
 }
-
-.btn-success:hover {
-    background-color: var(--color-success-dark) !important;
-    border-color: var(--color-success-dark) !important;
-    color: var(--color-primary) !important;
-}
-
 .btn-login-submit {
     background-color: var(--color-success) !important;
     color: var(--color-white) !important;
@@ -126,7 +140,6 @@ body {
 
 .btn-login-submit:hover {
     background-color: var(--color-success-dark) !important;
-    opacity: 0.9;
 }
 .bg-success-subtle {
     background-color: var(--color-success) !important;
@@ -142,19 +155,6 @@ body {
     color: var(--color-success-dark);
 }
 
-.nav-link-custom {
-    color: var(--color-gray-dark) !important;
-    transition: color 0.2s ease;
-}
-
-.nav-link-custom:hover {
-    color: var(--color-primary) !important;
-}
-
-.nav-link-custom.active {
-    color: var(--color-primary) !important;
-    font-weight: 700 !important;
-}
 
 .input-group-custom .form-control,
 .input-group-custom .input-group-text {

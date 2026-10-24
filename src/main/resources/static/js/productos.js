@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="card-body p-4 pt-3 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center mb-2">
-                                <span class="badge bg-success text-white text-uppercase tracking-wider fs-6 fw-bold">
+                                <span class="badge bg-success text-white text-uppercase fs-6 fw-bold">
                                     ${prod.categoria_nombre}
                                 </span>
                                 <span class="text-success fw-medium small text-truncate" style="max-w: 160px;">
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             </p>
                             <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                 <div>
-                                    <div class="small text-uppercase tracking-wider text-secondary fw-bold" style="font-size: 0.7rem;">Por Mayor</div>
+                                    <div class="small text-uppercase text-secondary fw-bold" style="font-size: 0.7rem;">Por Mayor</div>
                                     <div class="h4 fw-bold text-dark mb-0" style="color: var(--color-success) !important;">${precioFormateado}</div>
                                 </div>
                                 <a href="/comparar" data-id="${prod.id_producto}" class="btn bg-success px-3 py-2 rounded-3 fw-bold border-0 d-flex align-items-center gap-1 btn-ver-detalles">

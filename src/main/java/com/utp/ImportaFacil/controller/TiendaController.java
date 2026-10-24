@@ -104,12 +104,14 @@ public class TiendaController implements ErrorController {
 
     //Vistas publicas
     @GetMapping("/")
-    public String inicio() {
+    public String inicio(Model model) {
+        model.addAttribute("paginaActual", "inicio");
         return "inicio"; 
     }
 
     @GetMapping("/contacto")
-    public String contacto() {
+    public String contacto(Model model) {
+        model.addAttribute("paginaActual", "contacto");
         return "contacto"; 
     }
 
@@ -190,6 +192,7 @@ public class TiendaController implements ErrorController {
     //Vistas exclusivas de User
     @GetMapping("/productos")
     public String productos(Model model, HttpSession session) {
+        model.addAttribute("paginaActual", "productos");
         if (session.getAttribute("logged") == null){
             return "redirect:/login";
         }
@@ -200,6 +203,7 @@ public class TiendaController implements ErrorController {
 
     @GetMapping("/comparar")
     public String comparar(@RequestParam(required = false) Long id, Model model, HttpSession session) {
+        model.addAttribute("paginaActual", "comparar");
         if (session.getAttribute("logged") == null){
             return "redirect:/login";
         }

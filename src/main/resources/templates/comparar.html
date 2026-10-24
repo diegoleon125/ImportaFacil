@@ -2,7 +2,7 @@
 <html lang="es" xmlns:th="http://thymeleaf.org">
     <head th:replace="~{layout :: head('comparar.css', 'Comparar productos')}"></head>
 
-    <body class="bg-light-layout">
+    <body class="bg-light">
 
         <!-- HEADER -->
         <div th:replace="~{layout :: header}"></div>
@@ -17,7 +17,7 @@
 
                 <div class="card border-0 bg-white shadow-sm p-3 rounded-4 mb-5">
                     <div class="d-flex align-items-center gap-3">
-                        <span class="text-secondary small fw-bold text-uppercase tracking-wider">Estás comparando:</span>
+                        <span class="text-secondary small fw-bold text-uppercase">Estás comparando:</span>
                         <div class="d-flex align-items-center gap-2 bg-success-light px-3 py-2 rounded-3">
                             <i class="bi bi-box-seam text-primary"></i>
                             <span id="detalle-tag-nombre" class="text-primary fw-bold small" th:text="${productoSeleccionado.nombre}">Nombre</span>
@@ -36,15 +36,15 @@
                     <div class="col-md-7 col-lg-8">
                         <div class="d-flex flex-column gap-3">
                             <div>
-                                <span id="detalle-categoria" class="badge bg-success-subtle text-white text-uppercase tracking-wider fs-6 mb-2" th:text="${productoSeleccionado.categoria.nombre}">Categoria</span>
+                                <span id="detalle-categoria" class="badge bg-success-subtle text-white text-uppercase fs-6 mb-2" th:text="${productoSeleccionado.categoria.nombre}">Categoria</span>
                                 <h2 id="detalle-nombre" class="display-6 fw-bold text-dark mb-2" th:text="${productoSeleccionado.nombre}">Nombre</h2>
                                 <p id="detalle-descripcion" class="text-secondary lh-base" th:text="${productoSeleccionado.descripcion}">Descripción</p>
                             </div>
                             
-                            <div class="bg-success-subtle border-success-custom rounded-4 p-4 max-w-xl">
+                            <div class="bg-success-subtle border-success-custom rounded-4 p-4">
                                 <div class="d-flex align-items-center gap-2 mb-1">
                                     <i class="bi bi-star-fill text-white"></i>
-                                    <span class="text-white fw-bold text-uppercase tracking-wider small">Mejor precio disponible</span>
+                                    <span class="text-white fw-bold text-uppercase small">Mejor precio disponible</span>
                                 </div>
                                 <div class="d-flex align-items-baseline gap-2">
                                     <span class="small text-secondary fw-bold">Desde</span>
