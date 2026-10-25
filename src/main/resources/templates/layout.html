@@ -52,7 +52,7 @@
                         <div th:if="${session.logged != null}" class="d-flex align-items-center gap-3 border-start ps-3 mt-3 mt-lg-0 ms-lg-auto flex-shrink-0 justify-content-center justify-content-lg-end">
                             <div class="text-start">
                                 <div class="fw-bold small text-dark lh-1" th:text="${session.logged.nombre}">Invitado</div>
-                                <span th:if="${session.logged.perfilPremium == null}" class="badge text-white bg-secondary xsmall mt-1 px-2 py-1">Cliente Estándar</span>
+                                <span th:if="${session.logged.perfilPremium == null}" class="badge text-white bg-blue-light xsmall mt-1 px-2 py-1">Cliente Estándar</span>
                                 <span th:if="${session.logged.perfilPremium != null}" class="badge text-dark bg-success xsmall mt-1 px-2 py-1">
                                     Premium (<span th:text="${session.logged.perfilPremium.cantidadPuntos}">0</span> pts)
                                 </span>

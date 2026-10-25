@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <span class="badge bg-success text-white text-uppercase fs-6 fw-bold">
                                     ${prod.categoria_nombre}
                                 </span>
-                                <span class="text-success fw-medium small text-truncate" style="max-w: 160px;">
+                                <span class="text-success-dark fw-medium small text-truncate" style="max-w: 160px;">
                                     <i class="bi bi-patch-check-fill me-1"></i> ${empresaImportadora}
                                 </span>
                             </div>
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                 <div>
                                     <div class="small text-uppercase text-secondary fw-bold" style="font-size: 0.7rem;">Por Mayor</div>
-                                    <div class="h4 fw-bold text-dark mb-0" style="color: var(--color-success) !important;">${precioFormateado}</div>
+                                    <div class="h4 fw-bold text-success-dark mb-0">${precioFormateado}</div>
                                 </div>
                                 <a href="/comparar" data-id="${prod.id_producto}" class="btn bg-success px-3 py-2 rounded-3 fw-bold border-0 d-flex align-items-center gap-1 btn-ver-detalles">
                                     Ver detalles <i class="bi bi-arrow-right small"></i>

@@ -95,59 +95,56 @@ body {
     background-color: var(--color-yellow-light) !important;
 }
 
+/* BORDERES */
+.border-success {
+    border: 1px solid var(--color-success-dark) !important;
+}
+
 /* LINKS */
 .link {
     text-decoration: none !important;
     opacity: 0.6;
-    transition: opacity 0.2s ease;
+    transition: 0.2s ease;
 }
-.link:hover, .link.active {
+.link:hover, .link.active, .link:focus{
     opacity: 1;
 }
 .link.active {
     font-weight: 700 !important;
 }
+ a.link:focus{
+    color: var(--color-success-dark) !important;
+ }
 
-.link-success, .link-success:hover {
+.link-success, a.link-success:hover{
     color: var(--color-success-dark) !important;
 }
-.link-primary, .link-primary:hover {
+.link-primary, a.link-primary:hover{
     color: var(--color-primary) !important;
 }
 
 /* BOTONES */
 .btn-primary {
     background-color: var(--color-primary) !important;
-    border-color: var(--color-primary) !important;
+    border: 0 !important;
     &:hover {
         opacity: 0.85;
     }
 }
 .btn-success {
-    background-color: var(--color-success) !important;
-    border-color: var(--color-success) !important;
     color: var(--color-primary) !important;
+}
+.btn-success-white {
+    color: var(--color-white) !important;
+}
+.btn-success, .btn-success-white {
+    background-color: var(--color-success) !important;
+    border: 0 !important;
     &:hover {
         background-color: var(--color-success-dark) !important;
-        border-color: var(--color-success-dark) !important;
     }
 }
-.btn-login-submit {
-    background-color: var(--color-success) !important;
-    color: var(--color-white) !important;
-    transition: background-color 0.2s ease, opacity 0.2s ease;
-}
 
-.btn-login-submit:hover {
-    background-color: var(--color-success-dark) !important;
-}
-.bg-success-subtle {
-    background-color: var(--color-success) !important;
-
-}
-.border-success-custom {
-    border: 1px solid var(--color-success-dark) !important;
-}
 
 .nav-icon-box {
     width: 42px;

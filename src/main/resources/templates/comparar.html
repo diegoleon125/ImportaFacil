@@ -36,12 +36,12 @@
                     <div class="col-md-7 col-lg-8">
                         <div class="d-flex flex-column gap-3">
                             <div>
-                                <span id="detalle-categoria" class="badge bg-success-subtle text-white text-uppercase fs-6 mb-2" th:text="${productoSeleccionado.categoria.nombre}">Categoria</span>
+                                <span id="detalle-categoria" class="badge bg-success text-white text-uppercase fs-6 mb-2" th:text="${productoSeleccionado.categoria.nombre}">Categoria</span>
                                 <h2 id="detalle-nombre" class="display-6 fw-bold text-dark mb-2" th:text="${productoSeleccionado.nombre}">Nombre</h2>
                                 <p id="detalle-descripcion" class="text-secondary lh-base" th:text="${productoSeleccionado.descripcion}">Descripción</p>
                             </div>
                             
-                            <div class="bg-success-subtle border-success-custom rounded-4 p-4">
+                            <div class="bg-success border-success rounded-4 p-4">
                                 <div class="d-flex align-items-center gap-2 mb-1">
                                     <i class="bi bi-star-fill text-white"></i>
                                     <span class="text-white fw-bold text-uppercase small">Mejor precio disponible</span>
@@ -67,7 +67,7 @@
                                 <div>
                                     <h4 class="h5 fw-bold text-dark mb-1" th:text="${oferta.importador.nombreEmpresa}">Nombre de la Empresa</h4>
                                     <div class="d-flex align-items-center gap-2 flex-wrap">
-                                        <span class="badge bg-success-subtle text-white px-2 py-1 rounded-3 small fw-bold">
+                                        <span class="badge bg-success-dark text-white px-2 py-1 rounded-3 small fw-bold">
                                             <i class="bi bi-patch-check-fill me-1"></i> Verificado
                                         </span>
                                         <span class="small text-muted fw-medium bg-light px-2 py-1 rounded-3" style="font-size: 0.75rem;">
@@ -77,7 +77,7 @@
                                 </div>
                                 <div class="text-end">
                                     <div class="text-muted xsmall mb-1">Precio Unitario</div>
-                                    <div class="h4 fw-extrabold text-success mb-0" th:text="'S/. ' + ${#numbers.formatDecimal(oferta.precio, 1, 'COMMA', 2, 'POINT')}">S/. 0.00</div>
+                                    <div class="h4 fw-extrabold text-success-dark mb-0" th:text="'S/. ' + ${#numbers.formatDecimal(oferta.precio, 1, 'COMMA', 2, 'POINT')}">S/. 0.00</div>
                                 </div>
                             </div>
                             <div class="border-top pt-3 mt-auto d-flex justify-content-between align-items-center gap-3">
