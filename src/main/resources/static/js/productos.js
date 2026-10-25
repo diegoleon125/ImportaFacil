@@ -76,29 +76,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const tarjetaHtml = `
                 <div class="col animate-fade-in">
-                    <div class="card h-100 border border-light-subtle shadow-sm rounded-4 bg-white overflow-hidden card-product-item">
-                        <div class="product-img-box overflow-hidden" style="height: 220px; background-color: #f8f9fa;">
+                    <div class="card h-100 border border-light-subtle shadow-sm rounded-4 bg-white overflow-hidden card-dynamic">
+                        <div class="product-img-box overflow-hidden">
                             <img src="${prod.imagen}" class="w-100 h-100 object-fit-cover" alt="${prod.prod_nombre}">
                         </div>
                         <div class="card-body p-4 pt-3 d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
+                            <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
                                 <span class="badge bg-success text-white text-uppercase fs-6 fw-bold">
                                     ${prod.categoria_nombre}
                                 </span>
-                                <span class="text-success-dark fw-medium small text-truncate" style="max-w: 160px;">
+                                <span class="text-success-dark fw-medium small text-truncate">
                                     <i class="bi bi-patch-check-fill me-1"></i> ${empresaImportadora}
                                 </span>
                             </div>
                             <h3 class="h5 fw-bold text-dark mb-2">${prod.prod_nombre}</h3>
-                            <p class="text-secondary small mb-4" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; lh-relaxed">
+                            <p class="text-secondary small mb-4 lh-relaxed product-description">
                                 ${prod.descripcion || 'Sin descripción disponible.'}
                             </p>
                             <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                 <div>
-                                    <div class="small text-uppercase text-secondary fw-bold" style="font-size: 0.7rem;">Por Mayor</div>
+                                    <div class="small text-uppercase text-secondary fw-bold">Por Mayor</div>
                                     <div class="h4 fw-bold text-success-dark mb-0">${precioFormateado}</div>
                                 </div>
-                                <a href="/comparar" data-id="${prod.id_producto}" class="btn bg-success px-3 py-2 rounded-3 fw-bold border-0 d-flex align-items-center gap-1 btn-ver-detalles">
+                                <a href="/comparar" data-id="${prod.id_producto}" class="btn btn-success px-3 py-2 rounded-3 fw-bold d-flex align-items-center gap-1 btn-ver-detalles">
                                     Ver detalles <i class="bi bi-arrow-right small"></i>
                                 </a>
                             </div>

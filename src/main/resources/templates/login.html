@@ -35,26 +35,26 @@
                     
                     <div class="mb-3">
                         <label for="username" class="form-label small fw-bold text-dark mb-2">Correo electrónico</label>
-                        <div class="input-group input-group-custom">
-                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
                             <input type="email" id="username" name="correo" autocomplete="username" 
-                                class="form-control border-start-0 ps-0 text-dark fw-medium" placeholder="ejemplo@correo.com" required>
+                                class="form-control ps-0 text-dark fw-medium" placeholder="ejemplo@correo.com" required>
                         </div>
                         <div class="text-danger small mt-1 d-none" id="error-login-correo">Ingresa un correo electrónico válido.</div>
                     </div>
 
                     <div class="mb-4">
                         <label for="password" class="form-label small fw-bold text-dark mb-2">Contraseña</label>
-                        <div class="input-group input-group-custom">
-                            <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-lock"></i></span>
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
                             <input type="password" id="password" name="password" autocomplete="current-password" 
-                                class="form-control border-start-0 border-end-0 ps-0 text-dark fw-medium" placeholder="••••••••" required>
-                            <span id="btnTogglePassword" class="input-group-text bg-white border-start-0 text-muted cursor-pointer"><i class="bi bi-eye" id="iconEye"></i></span>
+                                class="form-control border-end-0 ps-0 text-dark fw-medium" placeholder="••••••••" required>
+                            <span id="btnTogglePassword" class="input-group-text bg-white text-muted cursor-pointer"><i class="bi bi-eye" id="iconEye"></i></span>
                         </div>
                         <div class="text-danger small mt-1 d-none" id="error-login-password">La contraseña es obligatoria.</div>
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-success-white  w-100 py-3 fw-bold rounded-3 border-0 mb-4 shadow-sm">
+                    <button type="submit" class="btn btn-success-white w-100 py-3 fw-bold rounded-3 mb-4 shadow-sm">
                         Iniciar Sesión
                     </button>
                     
@@ -80,29 +80,29 @@
                             <!-- Dentro del modal de registro -->
                             <div class="mb-3">
                                 <label class="form-label small fw-bold text-dark mb-2">Nombre completo</label>
-                                <div class="input-group input-group-custom">
-                                    <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-person"></i></span>
-                                    <input type="text" id="reg-nombre" name="nombre" class="form-control border-start-0 ps-0 text-dark fw-medium" placeholder="Juan Pérez" required>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input type="text" id="reg-nombre" name="nombre" class="form-control ps-0 text-dark fw-medium" placeholder="Juan Pérez" required>
                                 </div>
                                 <div class="text-danger small mt-1 d-none" id="error-nombre">Ingresa un nombre válido sin números ni símbolos.</div>
                             </div>
                             <div class="mb-3">
                                 <label class="form-label small fw-bold text-dark mb-2">Correo electrónico</label>
-                                <div class="input-group input-group-custom">
-                                    <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-envelope"></i></span>
-                                    <input type="email" id="reg-correo" name="correo" class="form-control border-start-0 ps-0 text-dark fw-medium" placeholder="ejemplo@correo.com" required>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                    <input type="email" id="reg-correo" name="correo" class="form-control ps-0 text-dark fw-medium" placeholder="ejemplo@correo.com" required>
                                 </div>
                                 <div class="text-danger small mt-1 d-none" id="error-correo">Ingresa un correo electrónico válido.</div>
                             </div>
                             <div class="mb-4">
                                 <label class="form-label small fw-bold text-dark mb-2">Contraseña</label>
-                                <div class="input-group input-group-custom">
-                                    <span class="input-group-text bg-white border-end-0 text-muted"><i class="bi bi-lock"></i></span>
-                                    <input type="password" id="reg-password" name="password" class="form-control border-start-0 ps-0 text-dark fw-medium" placeholder="••••••••" required>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                    <input type="password" id="reg-password" name="password" class="form-control ps-0 text-dark fw-medium" placeholder="••••••••" required>
                                 </div>
                                 <div class="text-danger small mt-1 d-none" id="error-password">La contraseña debe tener mínimo 8 caracteres, incluir una mayúscula, una minúscula, un número y un símbolo</div>
                             </div>
-                            <button type="submit" class="btn btn-success btn-success-white  w-100 py-3 fw-bold rounded-3 border-0 shadow-sm mb-2">
+                            <button type="submit" class="btn btn-success-white  w-100 py-3 fw-bold rounded-3 shadow-sm mb-2">
                                 Registrarme Gratis
                             </button>
                         </form>

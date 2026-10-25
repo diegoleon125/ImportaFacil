@@ -1,12 +1,4 @@
-.btn-success-dark {
-    background-color: var(--color-success-dark) !important;
-}
-
-.btn-success-dark:hover {
-    opacity: 0.9;
-}
-
-.form-custom {
+.form-decoration {
     top: -20px;
     right: -20px;
     width: 120px;

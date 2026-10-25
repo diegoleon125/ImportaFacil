@@ -28,7 +28,7 @@
                 <div class="row g-4 align-items-center mb-5">
                     <div class="col-md-5 col-lg-4 text-center">
                         <div class="bg-white border border-light-subtle rounded-4 p-4 shadow-sm">
-                            <div class="product-image-container overflow-hidden" style="height: 280px;">
+                            <div class="product-image-container overflow-hidden">
                                 <img id="detalle-imagen" th:src="${productoSeleccionado.imagen}" class="w-100 h-100 object-fit-contain" th:alt="${productoSeleccionado.nombre}">
                             </div>
                         </div>
@@ -70,13 +70,13 @@
                                         <span class="badge bg-success-dark text-white px-2 py-1 rounded-3 small fw-bold">
                                             <i class="bi bi-patch-check-fill me-1"></i> Verificado
                                         </span>
-                                        <span class="small text-muted fw-medium bg-light px-2 py-1 rounded-3" style="font-size: 0.75rem;">
+                                        <span class="small text-muted fw-medium bg-light px-2 py-1 rounded-3">
                                             <i class="bi bi-boxes text-secondary me-1"></i> Stock: <span class="fw-bold text-dark" th:text="${oferta.stock} + ' und'">0 und</span>
                                         </span>
                                     </div>
                                 </div>
                                 <div class="text-end">
-                                    <div class="text-muted xsmall mb-1">Precio Unitario</div>
+                                    <div class="text-muted mb-1">Precio Unitario</div>
                                     <div class="h4 fw-extrabold text-success-dark mb-0" th:text="'S/. ' + ${#numbers.formatDecimal(oferta.precio, 1, 'COMMA', 2, 'POINT')}">S/. 0.00</div>
                                 </div>
                             </div>
@@ -86,7 +86,7 @@
                                     <span th:text="${oferta.importador.direccion}">Dirección del importador</span>
                                 </div>
                                 <a th:href="@{/comprar(id=${oferta.id})}" 
-                                   class="btn px-3 py-1.5 bg-success rounded-3 fw-bold border-0 text-nowrap d-flex align-items-center gap-1 shadow-sm">
+                                   class="btn btn-success px-3 py-1.5 rounded-3 fw-bold text-nowrap d-flex align-items-center gap-1 shadow-sm">
                                     Comprar <i class="bi bi-arrow-right small"></i>
                                 </a>
                             </div>
@@ -99,7 +99,7 @@
                 <i class="bi bi-clipboard-x display-1 text-muted mb-3 d-block"></i>
                 <h2 class="fw-bold text-dark mb-2">No has seleccionado ningún producto</h2>
                 <p class="text-secondary mb-4">Regresa al catálogo general de productos para elegir un artículo y comparar sus tarifas.</p>
-                <a href="/productos" class="btn btn-success px-4 py-2.5 fw-bold rounded-3 border-0 shadow-sm text-white">
+                <a href="/productos" class="btn btn-success-white px-4 py-2.5 fw-bold rounded-3 shadow-sm">
                     Ver Catálogo de Productos
                 </a>
             </div>
