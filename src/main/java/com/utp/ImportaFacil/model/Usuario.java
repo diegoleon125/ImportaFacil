@@ -1,8 +1,22 @@
 package com.utp.ImportaFacil.model;
 
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario")
     private Long idUsuario;
+
+    @NotBlank(message = "El nombre es obligatorio.")
+    @Size(min = 2, max = 50, message = "El nombre debe tener entre 3 y 50 caracteres.")
+    @Column(nullable = false, length = 50)
     private String nombre;
+
+
     private String correo;
     private String contraseña;
     private String telefono;
