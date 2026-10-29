@@ -80,15 +80,15 @@
             const relacionesServidor = /*[[${listaRelaciones}]]*/ [];
             const productosBase = relacionesServidor.map(rel => {
                 return {
-                    id_producto: rel.producto.idProducto,
+                    id_producto: rel.producto.id, 
                     prod_nombre: rel.producto.nombre,
                     descripcion: rel.producto.descripcion,
                     imagen: rel.producto.imagen,
-                    id_categoria: rel.producto.categoria.idCategoria,
+                    id_categoria: rel.producto.categoria.id,
                     categoria_nombre: rel.producto.categoria.nombre,
                     categoria_color: rel.producto.categoria.color,
                     empresaImportadora: rel.importador.nombreEmpresa,
-                    id_importador: rel.importador.idImportador,
+                    id_importador: rel.importador.id,
                     precio: rel.precio,
                     stock: rel.stock
                 };

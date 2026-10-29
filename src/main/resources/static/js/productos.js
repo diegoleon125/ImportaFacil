@@ -11,18 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const actualizarCatalogo = () => {
         const queryBusqueda = inputBuscador ? inputBuscador.value.trim().toLowerCase() : '';
 
-        // Filtro de busqueda y categoria
-        console.log(productosBase);
         let productosFiltrados = productosBase.filter(item => {
             const coincideCategoria = (categoriaActual === 'Todas' || item.categoria_nombre.trim() === categoriaActual);
-            console.log(categoriaActual);
-            console.log(item.categoria_nombre);
             const coincideTexto = item.prod_nombre.toLowerCase().includes(queryBusqueda);
-            console.log(coincideTexto);
             return coincideCategoria && coincideTexto;
         });
 
-        // Filtro de precio
         const mapaAgrupado = {};
         productosFiltrados.forEach(item => {
             const id = item.id_producto;
@@ -42,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const listaProductosFinal = Object.values(mapaAgrupado);
 
-        console.log(listaProductosFinal);
-        // Actualización de tema
         let colorCategoria = '#9ad2c2'; 
          if (categoriaActual !== 'Todas') {
             const catEncontrada = categoriasGlobales.find(c => c.nombre.trim() === categoriaActual);
@@ -53,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         document.documentElement.style.setProperty('--color-success', colorCategoria);
 
-        // Actualización de texto
         if (txtContador) {
             const total = listaProductosFinal.length;
             txtContador.textContent = `${total} ${total === 1 ? 'producto' : 'productos'}`;
@@ -62,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             txtCategoria.textContent = categoriaActual;
         }
 
-        // Renderizado
         if (!contenedorProductos) return;
         contenedorProductos.innerHTML = '';
         
@@ -70,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contenedorProductos.innerHTML = `<div class="col-12 text-center text-muted py-5 fw-medium">No se encontraron productos coincidentes.</div>`;
             return;
         }
+        
         listaProductosFinal.forEach(prod => {
             const empresaImportadora = prod.nombre_empresa || 'Importador Verificado';
             const precioFormateado = `S/. ${Number(prod.precio_minimo).toFixed(2)}`;
@@ -82,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                         <div class="card-body p-4 pt-3 d-flex flex-column">
                             <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-                                <span class="badge bg-success text-white text-uppercase fs-6 fw-bold">
+                                <span class="badge text-dark text-uppercase fs-6 fw-bold" style="background-color: ${prod.categoria_color || '#9ad2c2'}">
                                     ${prod.categoria_nombre}
                                 </span>
                                 <span class="text-success-dark fw-medium small text-truncate">
@@ -98,7 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <div class="small text-uppercase text-secondary fw-bold">Por Mayor</div>
                                     <div class="h4 fw-bold text-success-dark mb-0">${precioFormateado}</div>
                                 </div>
-                                <a href="/comparar" data-id="${prod.id_producto}" class="btn btn-success px-3 py-2 rounded-3 fw-bold d-flex align-items-center gap-1 btn-ver-detalles">
+                                <!-- 🔥 CORRECCIÓN AQUÍ: href dinámico seguro y data-id asignado de manera correcta -->
+                                <a href="/comparar?id=${prod.id_producto}" data-id="${prod.id_producto}" class="btn btn-success px-3 py-2 rounded-3 fw-bold d-flex align-items-center gap-1 btn-ver-detalles">
                                     Ver detalles <i class="bi bi-arrow-right small"></i>
                                 </a>
                             </div>
@@ -112,9 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     actualizarCatalogo();
 
-    inputBuscador.addEventListener('input', () => actualizarCatalogo());
+    if (inputBuscador) {
+        inputBuscador.addEventListener('input', () => actualizarCatalogo());
+    }
 
-    //Actualizar categorias
     categoriasLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault(); 
@@ -125,21 +118,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     item.classList.add('active');
                 }
             });
-            inputBuscador.value = '';
+            if (inputBuscador) inputBuscador.value = '';
             actualizarCatalogo();
         });
     });
 
-    // Elegir producto
-    contenedorProductos.addEventListener('click', (e) => {
-        const boton = e.target.closest('.btn-ver-detalles');
-        if (boton) {
-            e.preventDefault();
-            const idProducto = boton.getAttribute('data-id');
-            if (idProducto) {
-                sessionStorage.setItem('ultimoProducto', idProducto);
-                window.location.href = `/comparar?id=${idProducto}`;
+    if (contenedorProductos) {
+        contenedorProductos.addEventListener('click', (e) => {
+            const boton = e.target.closest('.btn-ver-detalles');
+            if (boton) {
+                e.preventDefault();
+                const idProducto = boton.getAttribute('data-id');
+                if (idProducto && idProducto !== 'undefined') {
+                    sessionStorage.setItem('ultimoProducto', idProducto);
+                    window.location.href = `/comparar?id=${idProducto}`;
+                }
             }
-        }
-    });
+        });
+    }
 });
