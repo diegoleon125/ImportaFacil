@@ -13,11 +13,11 @@
         background-color: var(--color-light) !important;
         color: var(--color-primary) !important;
     }
-    .active {
-        background-color: var(--color-success) !important;
-        color: var(--color-white) !important;
-        font-weight: 700;
-    }
+}
+.nav-link-filter.active {
+    background-color: var(--color-success) !important;
+    color: var(--color-white) !important;
+    font-weight: 700;
 }
 
 /*BARRA DE BUSQUEDA*/
