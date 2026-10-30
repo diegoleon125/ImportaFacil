@@ -61,7 +61,7 @@ public class UsuarioController {
         
         if (result.hasErrors()) {
              result.getFieldErrors().forEach(error -> {
-                System.out.println("❌ ERROR VALIDACIÓN -> Campo: '" + error.getField() + "' | Mensaje: " + error.getDefaultMessage());
+                System.out.println("ERROR VALIDACIÓN -> Campo: '" + error.getField() + "' | Mensaje: " + error.getDefaultMessage());
             });
             model.addAttribute("errorRegistro", "Por favor, corrija los errores en el formulario.");
             return "login"; // Regresa a la vista manteniendo los mensajes de error en rojo
